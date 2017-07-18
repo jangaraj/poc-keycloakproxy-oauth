@@ -7,11 +7,16 @@ listen: 0.0.0.0:2016
 #enable-refresh-token: true
 secure-cookie: false
 
-redirection-url: http://fakedomain.com:2016/
+enable-logging: true
+enable-metrics: true
+upstream-keepalives: true
 
-upstream-url: http://127.0.0.1:8081
+redirection-url: http://play.monitoringartist.com:2016/
+
+upstream-url: http://localhost:8081/
+#upstream-url: http://volkswagen.com/
 
 resources:
-- uri: /
+- uri: /*
   methods:
   - GET
