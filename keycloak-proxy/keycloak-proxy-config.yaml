@@ -1,0 +1,17 @@
+discovery-url: https://accounts.google.com/.well-known/openid-configuration
+client-id: 162986408302-tskjmtpi9l8aou75gaefag98bpgar1os.apps.googleusercontent.com
+client-secret: dZECtKVKKEVacO3RrckjARHs
+
+listen: 0.0.0.0:2016
+
+#enable-refresh-token: true
+secure-cookie: false
+
+redirection-url: http://fakedomain.com:2016/
+
+upstream-url: http://127.0.0.1:8081
+
+resources:
+- uri: /
+  methods:
+  - GET
