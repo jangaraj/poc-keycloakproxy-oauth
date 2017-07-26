@@ -1,6 +1,7 @@
 FROM golang:1.8 as build
 RUN go get -d github.com/gambol99/keycloak-proxy \
   && cd /go/src/github.com/gambol99/keycloak-proxy \
+  && git checkout tags/v2.0.7 \
   && make static
  
 FROM ubuntu as cert

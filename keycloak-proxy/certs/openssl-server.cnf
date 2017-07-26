@@ -41,4 +41,9 @@ nsComment            = "OpenSSL Generated Certificate"
 ####################################################################
 [ alternate_names ]
 
-DNS.1  = 192.168.32.133
+DNS.1  = fakedomain.com
+DNS.2  = fakelocalhost.com
+DNS.3  = localhost
+IP.1 = 192.168.32.133
+IP.2 = 127.0.0.1
+

@@ -2,8 +2,8 @@ discovery-url: https://accounts.google.com/.well-known/openid-configuration
 client-id: 162986408302-tskjmtpi9l8aou75gaefag98bpgar1os.apps.googleusercontent.com
 client-secret: dZECtKVKKEVacO3RrckjARHs
 
-listen: 0.0.0.0:443
-#listen-http: 0.0.0.0:2016
+#listen: 0.0.0.0:443
+listen: 0.0.0.0:2016
 
 #enable-refresh-token: true
 #enable-encrypted-token: true
@@ -15,24 +15,26 @@ enable-json-logging: true
 enable-metrics: true
 upstream-keepalives: true
 
-enable-https-redirection: true
-enable-security-filter: true
-use-letsencrypt: true
-letsencrypt-cache-dir: /lecache
-hostnames:
-  - play.monitoringartist.com
+# let's encrypt cert setup
+#enable-https-redirection: true
+#enable-security-filter: true
+#use-letsencrypt: true
+#letsencrypt-cache-dir: /lecache
+#hostnames:
+#  - play.monitoringartist.com
 
-#skip-upstream-tls-verify: false
+skip-upstream-tls-verify: false
 #enable-forwarding: true
 #tls-cert value                    path to ths TLS certificate
 #tls-private-key value             path to the private key for TLS
 #tls-ca-certificate value          path to the ca certificate used for signing requests
 tls-ca-certificate: /cacert.pem 
 #tls-ca-key value                  path the ca private key, used by the forward signing proxy
-tls-ca-key: /cakey.pem
+#tls-ca-key: /cacert.pem
 #tls-client-certificate value      path to the client certificate for outbound connections in reverse and forwarding proxy modes
+#tls-client-certificate: /servercert.pem
    
-redirection-url: https://play.monitoringartist.com/
+redirection-url: http://fakedomain.com:2016/
 
 upstream-url: https://localhost:8082/
 #upstream-url: http://volkswagen.com/

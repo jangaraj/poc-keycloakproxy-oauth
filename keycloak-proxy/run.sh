@@ -1,4 +1,3 @@
-docker build -t keycloak-proxy .
 docker rm -f keycloak-proxy | true
 docker run -d \
   --name keycloak-proxy \
@@ -9,4 +8,4 @@ docker run -d \
   --volume $PWD/certs/servercert.pem:/servercert.pem \
   --volume $PWD/lecache/:/lecache/ \
   keycloak-proxy
-docker logs -f keycloak-proxy
+docker logs -f keycloak-proxy 
