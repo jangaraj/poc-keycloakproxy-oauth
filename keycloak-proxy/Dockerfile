@@ -10,7 +10,9 @@ FROM scratch
 WORKDIR /
 COPY --from=build /go/src/github.com/gambol99/keycloak-proxy/bin/keycloak-proxy /
 COPY --from=cert /etc/ssl/certs /etc/ssl/certs
-COPY keycloak-proxy-config.yaml /
+#COPY certs/cacert.pem /
+#COPY certs/cakey.pem /
+#COPY keycloak-proxy-config.yaml /
  
 CMD ["/keycloak-proxy", "--config", "/keycloak-proxy-config.yaml"]
 
