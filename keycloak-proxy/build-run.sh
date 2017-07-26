@@ -6,4 +6,5 @@ docker run -d \
   --volume $PWD/keycloak-proxy-config.yaml:/keycloak-proxy-config.yaml \
   --volume $PWD/certs/cacert.pem:/cacert.pem \
   --volume $PWD/certs/cakey.pem:/cakey.pem \
+  --volume $PWD/lecache/:/lecache/ \
   keycloak-proxy
