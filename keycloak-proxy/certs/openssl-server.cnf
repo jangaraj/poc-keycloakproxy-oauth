@@ -34,7 +34,7 @@ emailAddress_default = test@example.com
 
 subjectKeyIdentifier = hash
 basicConstraints     = CA:FALSE
-keyUsage             = digitalSignature, keyEncipherment
+keyUsage             = digitalSignature, keyEncipherment, clientAuth, serverAuth
 subjectAltName       = @alternate_names
 nsComment            = "OpenSSL Generated Certificate"
 

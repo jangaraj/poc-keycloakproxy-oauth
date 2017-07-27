@@ -37,7 +37,7 @@ tls-ca-certificate: /cacert.pem
 #tls-client-certificate value      path to the client certificate for outbound connections in reverse and forwarding proxy modes
 #tls-client-certificate: /cacert.pem
    
-redirection-url: https://fakedomain.com:2016/
+redirection-url: http://fakedomain.com:2016/
 
 upstream-url: https://localhost:8082/
 #upstream-url: http://volkswagen.com/

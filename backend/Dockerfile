@@ -8,8 +8,10 @@ RUN cd / && CGO_ENABLED=0 GOOS=linux go build -a -tags "netgo static_build" -ins
 FROM scratch
 WORKDIR /
 COPY --from=build /backend /
-COPY certs/servercert.pem /
-COPY certs/serverkey.pem /
+#COPY certs/servercert.pem /
+#COPY certs/serverkey.pem /
+COPY certs/backend-cert.pem /servercert.pem 
+COPY certs/backend-key.pem /serverkey.pem
 
 CMD ["/backend"]
 

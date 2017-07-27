@@ -80,5 +80,5 @@ emailAddress           = optional
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid,issuer
 basicConstraints       = CA:FALSE
-keyUsage               = digitalSignature, keyEncipherment
+keyUsage               = digitalSignature, keyEncipherment, clientAuth, serverAuth
 
