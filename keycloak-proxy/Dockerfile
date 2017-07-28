@@ -1,11 +1,14 @@
 FROM golang:1.8 as build
 RUN go get -d github.com/gambol99/keycloak-proxy \
   && cd /go/src/github.com/gambol99/keycloak-proxy \
-  && git checkout tags/v2.0.7 \
   && make static
  
 FROM ubuntu as cert
-RUN apt-get update && apt-get install ca-certificates -y
+COPY certs/cacert.pem /custom-ca.pem
+RUN apt-get update && apt-get install ca-certificates -y \
+  && mkdir -p /usr/local/share/ca-certificates/ \
+  && openssl x509 -in /custom-ca.pem -inform PEM -out /usr/local/share/ca-certificates/custom-ca.crt \
+  && update-ca-certificates
  
 FROM scratch
 WORKDIR /

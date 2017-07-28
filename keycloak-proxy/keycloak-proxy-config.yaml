@@ -6,16 +6,14 @@ client-secret: dZECtKVKKEVacO3RrckjARHs
 listen: 0.0.0.0:2016
 
 #enable-refresh-token: true
-#enable-encrypted-token: true
-#encryption-key: secret
-secure-cookie: false
 
 enable-logging: true
 enable-json-logging: true
+verbose: true
 enable-metrics: true
-upstream-keepalives: true
+secure-cookie: true
 
-# let's encrypt cert setup
+### let's encrypt cert setup
 #enable-https-redirection: true
 #enable-security-filter: true
 #use-letsencrypt: true
@@ -23,19 +21,27 @@ upstream-keepalives: true
 #hostnames:
 #  - play.monitoringartist.com
 
-skip-upstream-tls-verify: false
-#enable-forwarding: true
+### TLS configuration
 #tls-cert value                    path to ths TLS certificate
+tls-cert: /servercert.pem
 #tls-private-key value             path to the private key for TLS
+tls-private-key: /serverkey.pem
 #tls-ca-certificate value          path to the ca certificate used for signing requests
-tls-ca-certificate: /cacert.pem 
+#tls-ca-certificate: /cacert.pem 
 #tls-ca-key value                  path the ca private key, used by the forward signing proxy
 #tls-ca-key: /cacert.pem
 #tls-client-certificate value      path to the client certificate for outbound connections in reverse and forwarding proxy modes
 #tls-client-certificate: /servercert.pem
-   
-redirection-url: http://fakedomain.com:2016/
 
+### enable access token encryption
+enable-encrypted-token: true
+encryption-key: Bgia7xRcoClDEU4ZDS34XsXhR5QW2d45
+   
+redirection-url: https://fakedomain.com:2016/
+
+### upstream config
+skip-upstream-tls-verify: false
+upstream-keepalives: true
 upstream-url: https://localhost:8082/
 #upstream-url: http://volkswagen.com/
 
