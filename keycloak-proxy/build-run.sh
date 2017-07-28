@@ -4,6 +4,7 @@ docker rm -f keycloak-proxy | true
 docker run -d \
   --name keycloak-proxy \
   --net=host \
+  --volume $PWD/3certs/ca.pem:/etc/ssl/certs/cacert.pem \
   --volume $PWD/keycloak-proxy-config.yaml:/keycloak-proxy-config.yaml \
   --volume $PWD/3certs/ca.pem:/cacert.pem \
   --volume $PWD/3certs/ca-key.pem:/cakey.pem \

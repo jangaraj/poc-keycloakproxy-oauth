@@ -10,8 +10,10 @@ WORKDIR /
 COPY --from=build /backend /
 #COPY certs/servercert.pem /
 #COPY certs/serverkey.pem /
-COPY certs/backend-cert.pem /servercert.pem 
-COPY certs/backend-key.pem /serverkey.pem
+#COPY certs/backend-cert.pem /servercert.pem 
+#COPY certs/backend-key.pem /serverkey.pem
+COPY cert.pem /servercert.pem
+COPY key.pem /serverkey.pem
 
 CMD ["/backend"]
 

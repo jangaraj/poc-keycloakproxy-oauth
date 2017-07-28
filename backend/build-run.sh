@@ -5,3 +5,4 @@ docker run -d \
   --name backend \
   --net=host \
   backend
+docker logs -f backend
