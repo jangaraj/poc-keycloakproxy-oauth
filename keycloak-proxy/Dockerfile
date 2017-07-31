@@ -5,9 +5,14 @@ RUN go get -d github.com/gambol99/keycloak-proxy \
  
 FROM ubuntu as cert
 COPY certs/cacert.pem /custom-ca.pem
+COPY mutual-certs/mutual-cert.pem /custom-ca2.pem
 RUN apt-get update && apt-get install ca-certificates -y \
-  && mkdir -p /usr/local/share/ca-certificates/ \
-  && openssl x509 -in /custom-ca.pem -inform PEM -out /usr/local/share/ca-certificates/custom-ca.crt \
+  && mkdir -p /usr/local/share/ca-certificates/
+RUN \
+  openssl x509 -in /custom-ca.pem -inform PEM -out /usr/local/share/ca-certificates/custom-ca.crt \
+  && update-ca-certificates
+RUN \
+  openssl x509 -in /custom-ca2.pem -inform PEM -out /usr/local/share/ca-certificates/custom2-ca.crt \
   && update-ca-certificates
  
 FROM scratch

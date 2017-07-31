@@ -23,15 +23,17 @@ secure-cookie: true
 
 ### TLS configuration
 #tls-cert value                    path to ths TLS certificate
-tls-cert: /servercert.pem
+tls-cert: /mutual-cert.pem
+##tls-cert: /client.crt
 #tls-private-key value             path to the private key for TLS
-tls-private-key: /serverkey.pem
+tls-private-key: /mutual-key.pem
+##tls-private-key: /client.key
 #tls-ca-certificate value          path to the ca certificate used for signing requests
 #tls-ca-certificate: /cacert.pem 
 #tls-ca-key value                  path the ca private key, used by the forward signing proxy
 #tls-ca-key: /cacert.pem
 #tls-client-certificate value      path to the client certificate for outbound connections in reverse and forwarding proxy modes
-#tls-client-certificate: /servercert.pem
+tls-client-certificate: /ca.crt
 
 ### enable access token encryption
 enable-encrypted-token: true
