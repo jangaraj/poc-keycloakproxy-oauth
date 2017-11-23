@@ -2,8 +2,8 @@ discovery-url: https://accounts.google.com/.well-known/openid-configuration
 client-id: 162986408302-tskjmtpi9l8aou75gaefag98bpgar1os.apps.googleusercontent.com
 client-secret: dZECtKVKKEVacO3RrckjARHs
 
-#listen: 0.0.0.0:443
-listen: 0.0.0.0:2016
+listen: 0.0.0.0:443
+#listen: 0.0.0.0:2016
 
 #enable-refresh-token: true
 
@@ -23,23 +23,23 @@ secure-cookie: true
 
 ### TLS configuration
 #tls-cert value                    path to ths TLS certificate
-tls-cert: /mutual-cert.pem
-##tls-cert: /client.crt
+#tls-cert: /mutual-cert.pem
+tls-cert: /cacert.pem
 #tls-private-key value             path to the private key for TLS
-tls-private-key: /mutual-key.pem
-##tls-private-key: /client.key
+#tls-private-key: /mutual-key.pem
+tls-private-key: /cakey.pem
 #tls-ca-certificate value          path to the ca certificate used for signing requests
 #tls-ca-certificate: /cacert.pem 
 #tls-ca-key value                  path the ca private key, used by the forward signing proxy
 #tls-ca-key: /cacert.pem
 #tls-client-certificate value      path to the client certificate for outbound connections in reverse and forwarding proxy modes
-tls-client-certificate: /ca.crt
+#tls-client-certificate: /ca.crt
 
 ### enable access token encryption
 enable-encrypted-token: true
 encryption-key: Bgia7xRcoClDEU4ZDS34XsXhR5QW2d45
    
-redirection-url: https://fakedomain.com:2016/
+#redirection-url: https://fakedomain.com:2016/
 
 ### upstream config
 skip-upstream-tls-verify: false

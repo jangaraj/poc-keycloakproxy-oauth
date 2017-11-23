@@ -8,6 +8,8 @@ docker run -d \
   --volume $PWD/certs/servercert.pem:/servercert.pem \
   --volume $PWD/certs/serverkey.pem:/serverkey.pem \
   --volume $PWD/lecache/:/lecache/ \
-  keycloak-proxy
+  --entrypoint /opt/keycloak-proxy \
+  quay.io/gambol99/keycloak-proxy \
+  --config /keycloak-proxy-config.yaml
 docker logs -f keycloak-proxy
 
